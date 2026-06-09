@@ -1,6 +1,9 @@
-/* h1
+h1, h2
 {
     font-family: "Libre Baskerville", serif;
 }
 
-*/
+.form-layout{
+    border-radius: 15px;
+    width: 700px;
+}

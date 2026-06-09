@@ -2,7 +2,52 @@
 
 {% block content %}
 
-    <h1> This is the StrategyPlus+ homepage </h1>
 
+
+    <body>
+
+        <div class="text-center">
+            <br>
+            <br>
+            <h1>StrategyPlus+</h1>
+
+            <br>
+            <h3>You always need a strategy for your project!</h3>
+
+            <br>
+
+            <h5>
+                Keep track of the tragectory of your work
+            </h5>
+
+            <hr>
+
+            <br>
+
+            {% if user.is_authenticated %}
+                <br>
+                <h3> Welcome back {{user.username }} </h3>
+
+                <br>
+                <br>
+
+                <a class="btn btn-primary" type="button" href="{%url 'dashboard'%}"> 
+                Dashboard
+                </a>
+            {% else%}
+
+            <a class="btn btn-primary" type="button" href="{%url 'register'%}"> 
+                Create your account
+            </a>
+
+            <a class="btn btn-primary" type="button" href="{%url 'login'%}"> 
+                Log in
+            </a>
+
+            {% endif %}
+
+        </div>
+
+    </body>
 
 {% endblock %}
