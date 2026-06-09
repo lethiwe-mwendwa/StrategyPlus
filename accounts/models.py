@@ -39,3 +39,6 @@ class Membership(models.Model):
         choices=Role.choices,
         default=Role.MEMBER
     )
+
+    def __str__(self):
+        return f"{self.user} - {self.organisation} ({self.role})"
