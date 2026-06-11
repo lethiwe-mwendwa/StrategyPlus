@@ -1,9 +1,47 @@
-h1, h2
+h1, h2, .navbar-brand
 {
     font-family: "Libre Baskerville", serif;
+
 }
 
 .form-layout{
     border-radius: 15px;
     width: 700px;
+}
+
+body{
+    background-color: #FDF9F0;
+    color: #504f4e !important;
+
+}
+
+.bg-primary{
+    background-color: #ebe6da !important;
+}
+.btn-secondary{
+    background-color: #ebe6da !important;
+    color: #504f4e !important;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background-color: #504f4e !important;
+    color: #ebe6da !important;
+    font-weight: 600;
+}
+
+.bg-dark{
+    background-color: #4d4843 !important;
+    font-weight: 600;
+}
+
+.navbar-brand,
+.nav-link{
+    color: #504f4e !important;
+    font-weight: 500;
+    
+}
+
+.form-text{
+    color: #ebe6da !important;
 }

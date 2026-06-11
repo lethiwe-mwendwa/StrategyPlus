@@ -1,5 +1,5 @@
 # These must be run inside a venv created in this folder.
-# MUST BE USED RUN AFTER venv\Scripts\activate
+# AFTER venv\Scripts\activate
 
 install:
 	pip install -r requirements.txt
