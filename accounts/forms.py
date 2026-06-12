@@ -6,7 +6,16 @@ from django import forms
 from django.contrib.auth.forms import AuthenticationForm
 from django.forms.widgets import PasswordInput, TextInput
 
+from accounts.models import Organisation
+
 # register/create a user
+
+class OrganisationForm(forms.ModelForm):
+
+    class Meta:
+        
+        model = Organisation
+        fields = ['name', 'logo', 'country']
 
 class CreateUserForm(UserCreationForm):
 
@@ -22,6 +31,8 @@ class LoginForm(AuthenticationForm):
 
     username = forms.CharField(widget=TextInput())
     password = forms.CharField(widget=TextInput())
+
+
 
 
 

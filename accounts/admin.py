@@ -6,3 +6,5 @@ from .models import Organisation, Membership
 admin.site.register(Organisation)
 
 admin.site.register(Membership)
+
+

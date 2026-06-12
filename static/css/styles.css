@@ -9,9 +9,20 @@ h1, h2, .navbar-brand
     width: 700px;
 }
 
+.hero-section {
+    padding-top: clamp(80px, 10vh, 160px) !important;
+    padding-bottom: clamp(80px, 10vh, 160px) !important;
+}
+
+.content{
+    padding-top: clamp(30px, 5vh, 100px) !important;
+    padding-bottom: clamp(30px, 5vh, 100px) !important;
+}
+
 body{
     background-color: #FDF9F0;
     color: #504f4e !important;
+
 
 }
 

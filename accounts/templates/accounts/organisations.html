@@ -1,0 +1,47 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+
+<body>
+
+    <p> Prototype page to just show database linkage on frontend </p>
+
+    <h1> Your Organisations </h1>
+
+    <br>
+
+    <a class="btn btn-primary w-500 btn-block p-8" type="button" href="{%url 'createOrg'%}"> 
+        Create an Organisation
+    </a>
+
+
+    {% for organisation in organisations %}
+    
+    <hr>
+    <br>
+
+    <div class="organisation_item">
+
+        {{organisation.name}}
+
+        &nbsp;     &nbsp;     &nbsp; 
+
+        <form action="{% url 'deleteOrg' pk=organisation.pk %}" method="POST" style="display:inline;">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-lg btn-danger px-4">
+            Delete
+        </button>
+    </form>
+
+    </div>
+    <br>
+
+    {% endfor %}
+
+    <hr>
+
+            
+
+</body>
+
+{% endblock %}

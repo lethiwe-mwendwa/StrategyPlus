@@ -5,13 +5,13 @@
 {% block content %}
 
 <body>
-        <br>
+    <br>
         
     <div class="container bg-dark text-light shadow-md p-5 form-layout">
 
-        <h1> Log in to your account </h1>
+        <h1> Create an Organisation </h1>
         
-        <h5> Get back to working on your projects</h5>
+        <h5> Group up and get things done! </h5>
 
         <hr>
         <br>
@@ -25,14 +25,14 @@
 
             <br>
 
-            <button type="submit" class="btn btn-secondary w-100 btn-block p-3 btn-lg ">
-                Submit
+            <button type="submit" class="btn btn-secondary w-100 btn-block p-3">
+                Create Organisation
             </button>
             <br>
         </form>
         <br>
-        <div class="text-center ">
-            <p> Don't have an account? <a href="{% url 'register' %}"> Register here </a></p> 
+        <div class="text-center">
+            <p> Don't want to make an org? <a href="{% url 'dashboard' %}"> Get back to dashboard here </a></p> 
         </div>
 
     </div>

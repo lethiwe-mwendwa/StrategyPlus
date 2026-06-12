@@ -1,9 +1,54 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 
-from .forms import CreateUserForm, LoginForm
+from .forms import CreateUserForm, LoginForm, OrganisationForm
 
 from django.contrib.auth.models import auth
 from django.contrib.auth import authenticate
+
+from django.contrib.auth.decorators import login_required
+
+from .models import Membership, Organisation
+
+@login_required(login_url='login')
+def deleteOrg(request, pk):
+    organisation = get_object_or_404(Organisation, pk=pk)
+    
+    if request.method == "POST":
+        organisation.delete()
+        return redirect('organisations')
+
+    return redirect('organisations')
+
+@login_required(login_url='login')
+def organisations(request):
+
+    my_organisations = Organisation.objects.for_user(request.user)
+
+    return render(request, 'accounts/organisations.html', {
+        'organisations': my_organisations
+    })
+
+@login_required(login_url='login')
+def createOrg(request):
+
+    form = OrganisationForm()
+
+    if request.method == "POST":
+        form = OrganisationForm(request.POST, request.FILES)
+
+        if form.is_valid():
+            organisation = form.save(commit=False)
+
+            # system-controlled field
+            organisation.owner = request.user
+            organisation.save()
+
+            return redirect('organisations')
+        
+
+    return render(request, 'accounts/createOrg.html', {
+        'form': form
+    })
 
 
 def register(request):

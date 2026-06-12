@@ -2,7 +2,47 @@
 
 {% block content %}
 
-    <h1> Project list view </h1>
+    <body>
+
+    <h1> Your Projects </h1>
+
+    <br>
+
+    <a class="btn btn-primary w-500 btn-block p-8" type="button" href="{%url 'createProject'%}"> 
+        Create a Project
+    </a>
+
+
+    {% for project in projects %}
+    <hr>
+    <br>
+
+    <div class="project_item">
+
+    {{ project.name }}
+
+    &nbsp;     &nbsp;     &nbsp; 
+
+
+    <a class="btn btn-secondary btn-lg px-4" href="{% url 'projectDetail' pk=project.pk %}"> Details </a>
+
+    &nbsp;     &nbsp;     &nbsp; 
+
+    <form action="{% url 'deleteProject' pk=project.pk %}" method="POST" style="display:inline;">
+        {% csrf_token %}
+    <button type="submit" class="btn btn-lg btn-danger px-4">
+            Delete
+    </button>
+
+    </div>
+    <br>
+    {% endfor %}
+
+    <hr>
+
+            
+
+</body>
 
 
 {% endblock %}

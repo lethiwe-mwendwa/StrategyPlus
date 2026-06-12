@@ -1,0 +1,23 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+
+    <p> Prototype page to just show database linkage on frontend </p>
+
+    <br>
+
+    <h1>{{ project.name }}</h1>
+
+    <hr>
+
+    Status: {{project.status}}
+
+    <div class="container lead text-muted">
+    <p>{{project.description}}</p>
+    </div>
+
+    <p><a href="{%url 'projects'%}">Back to All Projects</a></p>
+
+    <hr>
+
+{% endblock %}
