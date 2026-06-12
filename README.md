@@ -75,7 +75,7 @@ http://127.0.0.1:8000/
 
 ## Admin Interface
 
-If a superuser account was created, the Django admin interface can be accessed at:
+A superuser account exists (username: admin, password: admin), the Django admin interface can be accessed at:
 
 ```text
 http://127.0.0.1:8000/admin/
